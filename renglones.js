@@ -18,12 +18,12 @@
   function cantidadRenglones(textBlock) {
     let rowCount = 0;
 
-    for (var i = 0; i < textBlock.value.length; i++) {
-      if (textBlock.value[i].includes('\n') && !textBlock.value[i - 1].includes('\n')) {
+    for (var i = 0; i < textBlock.length; i++) {
+      if (textBlock[i].includes('\n') && !textBlock[i - 1].includes('\n')) {
         rowCount++;
       }
     }
-    renglones.cantidad = rowCount;
+    renglones.cantidad = rowCount + 1;
   }
 
   // Valida si el objeto está declarado

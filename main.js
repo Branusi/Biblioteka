@@ -1,14 +1,16 @@
-let textBlock = document.getElementById('poem');
 let categorizeButton = document.getElementById('categorize');
-let categoryTitle = document.getElementById('category-title');
-let silaba = silabaJS.getSilabas('cantimplora').numeroSilaba;
+let silaba = silabaJS;
 let renglones = renglonesJS;
+let tema = temaJS;
 
 categorizeButton.onclick = function() {
 
-  categoryTitle.textContent = 'La cantidad de sílabas es de: ' + silaba + ' Y la cantidad de versos es de: ' + renglones.getRenglones(textBlock).cantidad;
+    let textBlock = document.getElementById('poem').value;
+    
+    let categoryTitle = document.getElementById('category-title');
+
+    categoryTitle.textContent = 'La cantidad de sílabas es de: ' + silaba.getSilabas(textBlock).numeroSilaba + ' La cantidad de versos es de: ' + renglones.getRenglones(textBlock).cantidad + ' Y el poema trata sobre: ' + temaJS.getTema(textBlock).palabraClave;
 
 
-console.log(renglones.getRenglones(textBlock).cantidad)
 
-};
+};		
